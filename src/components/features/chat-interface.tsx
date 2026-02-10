@@ -109,7 +109,7 @@ export default function ChatPage() {
                                     className={cn(
                                         "flex items-start gap-4 max-w-[85%] rounded-2xl p-4 text-sm shadow-sm",
                                         m.role === "user"
-                                            ? "ml-auto bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 rounded-tr-sm"
+                                            ? "ml-auto bg-muted/80 backdrop-blur-md text-foreground rounded-tr-sm border"
                                             : "bg-muted/80 backdrop-blur-md text-foreground rounded-tl-sm border"
                                     )}
                                 >
