@@ -1,0 +1,27 @@
+/* Basic ProseMirror styles */
+:global(.ProseMirror) {
+  outline: none;
+  min-height: 150px;
+}
+
+:global(.ProseMirror p.is-editor-empty:first-child::before) {
+  color: #adb5bd;
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+}
+
+/* Custom scrollbar for the editor content if needed */
+:global(.ProseMirror::-webkit-scrollbar) {
+  width: 8px;
+}
+
+:global(.ProseMirror::-webkit-scrollbar-track) {
+  background: transparent;
+}
+
+:global(.ProseMirror::-webkit-scrollbar-thumb) {
+  background-color: rgba(156, 163, 175, 0.5);
+  border-radius: 20px;
+}
