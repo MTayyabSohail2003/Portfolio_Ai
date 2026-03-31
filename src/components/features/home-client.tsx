@@ -41,9 +41,9 @@ export default function HomeClient() {
   }, []);
 
   return (
-    <div className="flex flex-col gap-12 md:gap-20 overflow-x-hidden">
+    <div className="flex flex-col gap-12 md:gap-20">
       {/* Hero Section with Enhanced Design */}
-      <section className="relative flex flex-col gap-8 pt-12 md:pt-16 lg:flex-row lg:items-center lg:justify-between overflow-hidden">
+      <section className="relative flex flex-col gap-8 pt-20 md:pt-12 lg:flex-row lg:items-center lg:justify-between pr-4 md:pr-12">
         {/* Background Gradient */}
         <div className="absolute inset-0 -z-10 bg-gradient-to-br from-primary/5 via-transparent to-orange-500/5 rounded-3xl blur-3xl" />
 
