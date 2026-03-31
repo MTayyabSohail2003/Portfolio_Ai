@@ -1,3 +1,4 @@
+import mongoose from "mongoose";
 import dbConnect from "@/lib/db/connect";
 import Project from "@/lib/db/models/Project";
 import Experience from "@/lib/db/models/Experience";
@@ -100,6 +101,30 @@ export class PortfolioService {
     } catch (error) {
       console.error("PortfolioService.getEducation error:", error);
       return [];
+    }
+  }
+
+  /**
+   * Fetches a single project by slug or ID
+   */
+  static async getProject(slugOrId: string) {
+    try {
+      await dbConnect();
+      const isObjectId = mongoose.Types.ObjectId.isValid(slugOrId);
+      let project;
+
+      if (isObjectId) {
+        project = await Project.findById(slugOrId).lean();
+      }
+
+      if (!project) {
+        project = await Project.findOne({ slug: slugOrId }).lean();
+      }
+
+      return project ? JSON.parse(JSON.stringify(project)) : null;
+    } catch (error) {
+      console.error("PortfolioService.getProject error:", error);
+      return null;
     }
   }
 }

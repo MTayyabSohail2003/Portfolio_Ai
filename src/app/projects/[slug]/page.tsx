@@ -5,37 +5,12 @@ import { ArrowLeft, Github, MonitorPlay, Calendar, ExternalLink } from "lucide-r
 import Link from "next/link";
 
 import { ProjectImageGallery } from "@/components/ui/project-image-gallery";
+import { PortfolioService } from "@/lib/services/portfolio-service";
 
-async function getProject(slug: string) {
-  // Use absolute URL or relative if on server components depending on setup
-  // Usually we prefer direct DB call in server components for performance, but API is fine.
-  // Since we are in app router, we can fetch via full URL or import logic.
-  // Using API via fetch for consistency, assuming running on localhost:3000 during dev/build
-  // BUT in production, fetch to localhost might fail if not configured.
-  // Better to use Logic directly if possible.
-  // Let's try fetch first, assuming standard Next.js setup.
-
-  // NOTE: In server components, relative urls work if base is set, but usually require absolute.
-  // Safe approach: Logic directly or absolute URL.
-  // Given we don't have SITE_URL env guaranteed, let's use the API Route logic directly or create a helper.
-  // Actually, standard practice in App Router for same-project data is direct DB access.
-  // Let's call the API if we can, or DB.
-
-  // Let's try to fetch from API with fallback.
-  try {
-    const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
-    const res = await fetch(`${baseUrl}/api/projects/${slug}`, { next: { revalidate: 60 } });
-    if (!res.ok) return null;
-    return res.json();
-  } catch (e) {
-    console.error(e);
-    return null;
-  }
-}
 
 export default async function ProjectDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const project = await getProject(slug);
+  const project = await PortfolioService.getProject(slug);
 
   if (!project) {
     notFound();
@@ -98,7 +73,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
       <div className="border-t pt-8 mt-8 flex justify-center">
         <Button variant="ghost" asChild>
           <Link href="/contact">
-            Interested in building something similar? Let's talk. <ExternalLink className="ml-2 h-4 w-4" />
+            Interested in building something similar? Let&apos;s talk. <ExternalLink className="ml-2 h-4 w-4" />
           </Link>
         </Button>
       </div>
