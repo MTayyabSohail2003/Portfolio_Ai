@@ -8,7 +8,7 @@ import { Footer } from "@/components/layout/footer";
 import { Toaster } from "sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { AnalyticsTracker } from "@/components/features/analytics-tracker";
-import { FloatingChat } from "@/components/chat/floating-chat";
+// import { FloatingChat } from "@/components/chat/floating-chat";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -47,7 +47,7 @@ export default function RootLayout({
             </ApolloWrapper>
           </TooltipProvider>
           <Toaster position="top-center" richColors closeButton />
-          <FloatingChat />
+          {/* <FloatingChat /> */}
         </ThemeProvider>
       </body>
     </html>

@@ -14,20 +14,7 @@ export const PORTFOLIO_DATA = {
       `,
       technologies: ["Next.js", "Agentic AI", "Stripe", "SaaS"],
     },
-    {
-      position: "MERN Stack Developer",
-      company: "Sofrix Solution",
-      location: "Faisalabad, Pakistan",
-      startDate: new Date("2025-02-01"),
-      endDate: new Date("2025-06-01"),
-      current: false,
-      description: `
-- **Component Library**: Created a proprietary set of reusable React components (Buttons, Modals, Inputs).
-- **Robust API Integration**: Implemented Axios Interceptors for centralized JWT token handling.
-- **State Management**: Refactored legacy Redux codebases into modern React Query and Context architectures.
-      `,
-      technologies: ["React", "Redux", "Axios", "MERN"],
-    },
+
     {
       position: "Web & Mobile Developer",
       company: "Gamica Cloud (GIAIC)",

@@ -56,10 +56,10 @@ export default function AboutClient() {
                     <p>
                         I am <strong className="text-primary">Muhammad Tayyab</strong>, a passionate Full Stack Developer specializing in the{" "}
                         <span className="text-foreground font-medium">MERN ecosystem</span> (MongoDB, Express.js, React.js, Node.js). With over{" "}
-                        <span className="text-foreground font-medium">2.5 years of hands-on experience</span>, I build full-stack applications that are fast, user-friendly, and scalable.
+                        <span className="text-foreground font-medium">3+ years of hands-on experience</span>, I build full-stack applications that are fast, user-friendly, and scalable.
                     </p>
                     <p>
-                        Currently at <strong>WODWES LLC</strong> and <strong>DevMiners</strong>, I craft responsive UIs with React.js and Tailwind CSS,
+                        Currently at <strong>WODWES LLC</strong>, I craft responsive UIs with React.js and Tailwind CSS,
                         build secure RESTful and GraphQL APIs with Node.js and Express, optimize application performance, and explore the cutting edge of{" "}
                         <span className="text-foreground font-medium">Agentic AI</span> and{" "}
                         <span className="text-foreground font-medium">RAG systems</span>.
@@ -115,25 +115,7 @@ export default function AboutClient() {
                 </div>
             </section>
 
-            {/* Tech Stack Summary */}
-            <section className="space-y-4">
-                <h2 className="text-3xl font-bold tracking-tight">Technical Arsenal</h2>
-                <div className="flex flex-wrap gap-2">
-                    {loading ? (
-                        <>
-                            <Skeleton className="h-6 w-24" />
-                            <Skeleton className="h-6 w-20" />
-                            <Skeleton className="h-6 w-32" />
-                            <Skeleton className="h-6 w-16" />
-                            <Skeleton className="h-6 w-28" />
-                        </>
-                    ) : (
-                        techStack.map((tech: string) => (
-                            <Badge key={tech} variant="secondary" className="text-sm px-3 py-1">{tech}</Badge>
-                        ))
-                    )}
-                </div>
-            </section>
+
         </div>
     );
 }
